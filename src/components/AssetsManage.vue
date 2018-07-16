@@ -1,6 +1,6 @@
 <template>
     <div id="assetsManage">
-        <div class="breadcrumb">投资管理 / 资产管理 / 我的基金</div>
+        <div class="breadcrumb" @click="dialogShow">投资管理 / 资产管理 / 我的基金</div>
         <ul class="title card clear">
             <li class="fl"><span>我的基金</span><img src="../assets/img/tag.png" alt=""></li>
             <li class="fl"><h1>5</h1><h2>投资基金总数量</h2></li>
@@ -300,12 +300,36 @@
                 </div>
             </el-collapse-item>
         </el-collapse>
+        <div class="dialog_wrapper" v-show="dialogWrapperVisible" @click="dialogHide">
+            <transition name="el-zoom-in-bottom">
+                <div class="dialog card" v-show="dialogVisible"></div>
+            </transition>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "AssetsManage"
+        name: "AssetsManage",
+        data() {
+            return{
+                dialogWrapperVisible: false,
+                dialogVisible: false
+            }
+        },
+        methods: {
+            dialogShow() {
+                this.dialogVisible = true;
+                this.dialogWrapperVisible = true;
+            },
+            dialogHide() {
+                this.dialogVisible = false;
+                let timer = setTimeout(()=>{
+                    this.dialogWrapperVisible = false;
+                    clearInterval(timer);
+                },100);
+            }
+        }
     }
 </script>
 
@@ -350,6 +374,21 @@
             &:first-child{
                 width: 430px;
             }
+        }
+    }
+    .dialog_wrapper{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2000;
+        .dialog{
+            width: 1760px;
+            height: 400px;
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
         }
     }
 </style>
@@ -412,8 +451,14 @@
                             line-height: 44px;
                             margin: 10px 0;
                             li{
-                                width: 274px;
-                                text-align: center;
+                                width: 254px;
+                                padding-left: 20px;
+                                &:first-child{
+                                    width: 180px;
+                                }
+                                &:nth-child(2){
+                                    width: 328px;
+                                }
                             }
                         }
                     }
