@@ -115,6 +115,7 @@
         }
     }
 </style>
+
 <style lang="scss">
     #platform{
         .el-menu{

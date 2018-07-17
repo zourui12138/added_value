@@ -302,22 +302,231 @@
         </el-collapse>
         <div class="dialog_wrapper" v-show="dialogWrapperVisible" @click="dialogHide">
             <transition name="el-zoom-in-bottom">
-                <div class="dialog card" v-show="dialogVisible"></div>
+                <div class="dialog card clear" v-show="dialogVisible">
+                    <div class="left fl">
+                        <div class="chart" ref="left_top" style="margin-bottom: 10px"></div>
+                        <div class="chart" ref="left_bottom"></div>
+                    </div>
+                    <div class="right fr">
+                        <el-table
+                            class="tableList"
+                            header-cell-class-name="tableCell"
+                            :data="tableData"
+                            style="width: 100%">
+                            <el-table-column label="ID" width="100">
+                                <template slot-scope="scope"><strong>{{ scope.row.id }}</strong></template>
+                            </el-table-column>
+                            <el-table-column label="事件">
+                                <template slot-scope="scope">
+                                    <h1><img :src="scope.row.event.img" alt=""><span>{{scope.row.event.value}}</span></h1>
+                                </template>
+                            </el-table-column>
+                            <el-table-column prop="date" label="时间"></el-table-column>
+                            <el-table-column label="认证机构">
+                                <template slot-scope="scope">
+                                    <h2 v-for="i in scope.row.organization"><img :src="i.img" alt=""><span>{{i.value}}</span></h2>
+                                </template>
+                            </el-table-column>
+                            <el-table-column label="资料">
+                                <template slot-scope="scope">
+                                    <h3 v-for="i in scope.row.data" class="clear">
+                                        <span class="fl">{{i.value}}</span>
+                                        <img class="fr" :src="i.status === 'open' ? imgUrl.open_lock : imgUrl.close_lock" alt="">
+                                    </h3>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                    </div>
+                </div>
             </transition>
         </div>
     </div>
 </template>
 
 <script>
+    import evet_img from '../assets/img/evet_img.png'
+    import firm from '../assets/img/firm.png'
+    import AMAC from '../assets/img/AMAC.png'
+    import certification from '../assets/img/certification.png'
+    import open_lock from '../assets/img/open_lock.png'
+    import close_lock from '../assets/img/close_lock.png'
+
     export default {
         name: "AssetsManage",
         data() {
             return{
+                imgUrl: {
+                    open_lock: open_lock,
+                    close_lock: close_lock
+                },
                 dialogWrapperVisible: false,
-                dialogVisible: false
+                dialogVisible: false,
+                tableData: [
+                    {
+                        id: '1',
+                        event: {
+                            value: 'xxxxxxx基金发布',
+                            img: evet_img
+                        },
+                        date: '2016-05-02',
+                        organization: [
+                            {
+                                value: '会计事务所',
+                                img: firm
+                            },
+                            {
+                                value: '中基协',
+                                img: AMAC
+                            },
+                            {
+                                value: '认证中心',
+                                img: certification
+                            }
+                        ],
+                        data: [
+                            {
+                                value: '备案材料.doc',
+                                status: 'open'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        event: {
+                            value: 'xxxxxxx基金发布',
+                            img: evet_img
+                        },
+                        date: '2016-05-02',
+                        organization: [
+                            {
+                                value: '会计事务所',
+                                img: firm
+                            },
+                            {
+                                value: '中基协',
+                                img: AMAC
+                            },
+                            {
+                                value: '认证中心',
+                                img: certification
+                            }
+                        ],
+                        data: [
+                            {
+                                value: '备案材料.doc',
+                                status: 'open'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        event: {
+                            value: 'xxxxxxx基金发布',
+                            img: evet_img
+                        },
+                        date: '2016-05-02',
+                        organization: [
+                            {
+                                value: '会计事务所',
+                                img: firm
+                            },
+                            {
+                                value: '中基协',
+                                img: AMAC
+                            },
+                            {
+                                value: '认证中心',
+                                img: certification
+                            }
+                        ],
+                        data: [
+                            {
+                                value: '备案材料.doc',
+                                status: 'open'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            },
+                            {
+                                value: '备案材料.doc',
+                                status: 'close'
+                            }
+                        ]
+                    }
+                ]
             }
         },
         methods: {
+            lineChart(dom,color) {
+                // 基于准备好的dom，初始化echarts实例
+                let myChart = this.$echarts.init(dom);
+                // 图表配置项
+                let option = {
+                    title: {
+                        text: '基金最近交易单价趋势',
+                        textStyle: {
+                            color: '#333',
+                            fontSize: 16
+                        },
+                        top: 10,
+                        left: 10
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['基金单价'],
+                        right: 10,
+                        top: 10
+                    },
+                    grid: {
+                        left: 10,
+                        right: 20,
+                        bottom: 10,
+                        containLabel: true
+                    },
+                    xAxis:  {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['周一','周二','周三','周四','周五','周六','周日']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    color: [color],
+                    series: [
+                        {
+                            name: '基金单价',
+                            type: 'line',
+                            data: [11, 11, 15, 13, 12, 13, 10],
+                            markPoint: {
+                                data: [
+                                    {type: 'max', name: '最大值'}
+                                ]
+                            }
+                        }
+                    ]
+                };
+                // 绘制图表
+                myChart.setOption(option);
+            },
             dialogShow() {
                 this.dialogVisible = true;
                 this.dialogWrapperVisible = true;
@@ -329,6 +538,10 @@
                     clearInterval(timer);
                 },100);
             }
+        },
+        mounted() {
+            this.lineChart(this.$refs.left_top,'#fe6f67');
+            this.lineChart(this.$refs.left_bottom,'#475dff');
         }
     }
 </script>
@@ -384,86 +597,144 @@
         left: 0;
         z-index: 2000;
         .dialog{
-            width: 1760px;
-            height: 400px;
+            width: 1720px;
+            height: 410px;
             position: absolute;
             bottom: 10px;
             right: 30px;
+            border: 1px solid #c5976c;
+            border-radius: 6px;
+            padding: 9px 19px;
+            .left{
+                width: 610px;
+                .chart{
+                    width: 602px;
+                    height: 192px;
+                    border: 4px solid #f9f9f9;
+                }
+            }
+            .right{
+                width: 1090px;
+                .tableList{
+                    strong{
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                        text-align: center;
+                        color: #fff;
+                        background-color: #fe7668;
+                        border-radius: 4px;
+                    }
+                    h1{
+                        height: 44px;
+                        line-height: 44px;
+                        img{
+                            width: 44px;
+                            height: 44px;
+                            margin-right: 10px;
+                        }
+                    }
+                    h2{
+                        height: 30px;
+                        line-height: 30px;
+                        img{
+                            width: 24px;
+                            height: 24px;
+                            margin-top: 3px;
+                            margin-right: 10px;
+                        }
+                    }
+                    h3{
+                        height: 30px;
+                        line-height: 30px;
+                        img{
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
 
 <style lang="scss">
-    .el-collapse{
-        border: none;
-        .el-collapse-item{
-            margin-bottom: 16px;
-            .el-collapse-item__header{
-                height: 86px;
-                line-height: 86px;
-                background-color: transparent;
-                border-bottom: none;
-                .collapse_title{
-                    li{
-                        width: 256px;
-                        text-align: center;
-                    }
-                    li:first-child{
-                        width: 90px;
-                        button{
-                            width: 90px;
-                            height: 60px;
-                            border-radius: 4px;
-                            background: linear-gradient(to right, #feb872, #fe6f67);
-                            color: #fff;
+    #assetsManage{
+        .el-collapse{
+            border: none;
+            .el-collapse-item{
+                margin-bottom: 16px;
+                .el-collapse-item__header{
+                    height: 86px;
+                    line-height: 86px;
+                    background-color: transparent;
+                    border-bottom: none;
+                    .collapse_title{
+                        li{
+                            width: 256px;
+                            text-align: center;
                         }
-                    }
-                    li:last-child{
-                        width: 96px;
-                        button{
+                        li:first-child{
+                            width: 90px;
+                            button{
+                                width: 90px;
+                                height: 60px;
+                                border-radius: 4px;
+                                background: linear-gradient(to right, #feb872, #fe6f67);
+                                color: #fff;
+                            }
+                        }
+                        li:last-child{
                             width: 96px;
-                            height: 40px;
-                            border-radius: 4px;
-                            background: linear-gradient(to right, #ddc095, #c49469);
-                            color: #fff;
+                            button{
+                                width: 96px;
+                                height: 40px;
+                                border-radius: 4px;
+                                background: linear-gradient(to right, #ddc095, #c49469);
+                                color: #fff;
+                            }
                         }
                     }
                 }
-            }
-            .el-collapse-item__arrow{
-                margin-top: 19px;
-            }
-            .el-collapse-item__wrap{
-                background-color: transparent;
-                border-bottom: none;
-            }
-            .el-collapse-item__content{
-                padding-bottom: 0;
-                padding-top: 16px;
-                .collapse_content_container{
-                    padding: 20px 45px;
-                    .collapse_content{
-                        border: 1px solid #c5976c;
-                        padding: 0 12px;
-                        border-radius: 6px;
-                        ul{
-                            height: 44px;
-                            line-height: 44px;
-                            margin: 10px 0;
-                            li{
-                                width: 254px;
-                                padding-left: 20px;
-                                &:first-child{
-                                    width: 180px;
-                                }
-                                &:nth-child(2){
-                                    width: 328px;
+                .el-collapse-item__arrow{
+                    margin-top: 19px;
+                }
+                .el-collapse-item__wrap{
+                    background-color: transparent;
+                    border-bottom: none;
+                }
+                .el-collapse-item__content{
+                    padding-bottom: 0;
+                    padding-top: 16px;
+                    .collapse_content_container{
+                        padding: 20px 45px;
+                        .collapse_content{
+                            border: 1px solid #c5976c;
+                            padding: 0 12px;
+                            border-radius: 6px;
+                            ul{
+                                height: 44px;
+                                line-height: 44px;
+                                margin: 10px 0;
+                                li{
+                                    width: 254px;
+                                    padding-left: 20px;
+                                    &:first-child{
+                                        width: 180px;
+                                    }
+                                    &:nth-child(2){
+                                        width: 328px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
+        }
+        .tableCell{
+            background-color: #fafafa;
+            color: #c4956a;
         }
     }
 </style>

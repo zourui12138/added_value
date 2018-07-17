@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Platform from '../modules/platform/Platform'
 import Home from '../modules/platform/home/Home'
+import KnowledgeBase from '../modules/knowledgeBase/KnowledgeBase'
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
                     component: Home
                 }
             ]
+        },
+        {
+            path: '/knowledgeBase',
+            name: 'knowledgeBase',
+            component: KnowledgeBase
         }
     ]
 })
