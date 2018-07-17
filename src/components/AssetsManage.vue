@@ -8,298 +8,414 @@
             <li class="fl"><h1>234W企元</h1><h2>当前基金价值</h2></li>
             <li class="fl"><h1>43W增元</h1><h2>当前基金信誉</h2></li>
         </ul>
-        <el-collapse accordion>
-            <el-collapse-item>
-                <template slot="title">
-                    <ul class="collapse_title card clear">
-                        <li class="fl"><button type="button">正在运作</button></li>
-                        <li class="fl">中欧医院健康混合基金</li>
-                        <li class="fl">发布机构：GPI</li>
-                        <li class="fl">投资时间：2018-05-30</li>
-                        <li class="fl">投资金额：50W投元</li>
-                        <li class="fl">当前投资：65W投元</li>
-                        <li class="fl">当前信誉：14W增元</li>
-                        <li class="fl"><button type="button">交易</button></li>
-                    </ul>
-                </template>
-                <div class="collapse_content_container card">
-                    <div class="collapse_content">
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
+        <VuePerfectScrollbar v-if="true" v-scroll class="fund">
+            <el-collapse accordion>
+                <el-collapse-item>
+                    <template slot="title">
+                        <ul class="fundList card clear">
+                            <li class="fl"><button type="button">正在运作</button></li>
+                            <li class="fl">中欧医院健康混合基金</li>
+                            <li class="fl">发布机构：GPI</li>
+                            <li class="fl">投资时间：2018-05-30</li>
+                            <li class="fl">投资金额：<span>50W投元</span></li>
+                            <li class="fl">当前投资：<span>65W投元</span></li>
+                            <li class="fl">当前信誉：<span>14W增元</span></li>
+                            <li class="fl"><button class="current" type="button">项目</button><button type="button">LP</button></li>
                         </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
+                    </template>
+                    <div class="fund_content_container card">
+                        <div class="fund_content project_content">
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
+                        <div class="fund_content LP_content">
+                            <ul class="card clear">
+                                <li class="fl"><img src="../assets/img/chat_icon.png" alt=""></li>
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">LP名称：张三</li>
+                                <li class="fl">类别：个人</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </el-collapse-item>
-            <el-collapse-item>
-                <template slot="title">
-                    <ul class="collapse_title card clear">
-                        <li class="fl"><button type="button">正在运作</button></li>
-                        <li class="fl">中欧医院健康混合基金</li>
-                        <li class="fl">发布机构：GPI</li>
-                        <li class="fl">投资时间：2018-05-30</li>
-                        <li class="fl">投资金额：50W投元</li>
-                        <li class="fl">当前投资：65W投元</li>
-                        <li class="fl">当前信誉：14W增元</li>
-                        <li class="fl"><button type="button">交易</button></li>
-                    </ul>
-                </template>
-                <div class="collapse_content_container card">
-                    <div class="collapse_content">
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
+                </el-collapse-item>
+                <el-collapse-item>
+                    <template slot="title">
+                        <ul class="fundList card clear">
+                            <li class="fl"><button type="button">正在运作</button></li>
+                            <li class="fl">中欧医院健康混合基金</li>
+                            <li class="fl">发布机构：GPI</li>
+                            <li class="fl">投资时间：2018-05-30</li>
+                            <li class="fl">投资金额：<span>50W投元</span></li>
+                            <li class="fl">当前投资：<span>65W投元</span></li>
+                            <li class="fl">当前信誉：<span>14W增元</span></li>
+                            <li class="fl"><button class="current" type="button">项目</button><button type="button">LP</button></li>
                         </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
+                    </template>
+                    <div class="fund_content_container card">
+                        <div class="fund_content project_content">
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
+                        <div class="fund_content LP_content">
+                            <ul class="card clear">
+                                <li class="fl"><img src="../assets/img/chat_icon.png" alt=""></li>
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">LP名称：张三</li>
+                                <li class="fl">类别：个人</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </el-collapse-item>
-            <el-collapse-item>
-                <template slot="title">
-                    <ul class="collapse_title card clear">
-                        <li class="fl"><button type="button">正在运作</button></li>
-                        <li class="fl">中欧医院健康混合基金</li>
-                        <li class="fl">发布机构：GPI</li>
-                        <li class="fl">投资时间：2018-05-30</li>
-                        <li class="fl">投资金额：50W投元</li>
-                        <li class="fl">当前投资：65W投元</li>
-                        <li class="fl">当前信誉：14W增元</li>
-                        <li class="fl"><button type="button">交易</button></li>
-                    </ul>
-                </template>
-                <div class="collapse_content_container card">
-                    <div class="collapse_content">
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
+                </el-collapse-item>
+                <el-collapse-item>
+                    <template slot="title">
+                        <ul class="fundList card clear">
+                            <li class="fl"><button type="button">正在运作</button></li>
+                            <li class="fl">中欧医院健康混合基金</li>
+                            <li class="fl">发布机构：GPI</li>
+                            <li class="fl">投资时间：2018-05-30</li>
+                            <li class="fl">投资金额：<span>50W投元</span></li>
+                            <li class="fl">当前投资：<span>65W投元</span></li>
+                            <li class="fl">当前信誉：<span>14W增元</span></li>
+                            <li class="fl"><button class="current" type="button">项目</button><button type="button">LP</button></li>
                         </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
+                    </template>
+                    <div class="fund_content_container card">
+                        <div class="fund_content project_content">
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
+                        <div class="fund_content LP_content">
+                            <ul class="card clear">
+                                <li class="fl"><img src="../assets/img/chat_icon.png" alt=""></li>
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">LP名称：张三</li>
+                                <li class="fl">类别：个人</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </el-collapse-item>
-            <el-collapse-item>
-                <template slot="title">
-                    <ul class="collapse_title card clear">
-                        <li class="fl"><button type="button">正在运作</button></li>
-                        <li class="fl">中欧医院健康混合基金</li>
-                        <li class="fl">发布机构：GPI</li>
-                        <li class="fl">投资时间：2018-05-30</li>
-                        <li class="fl">投资金额：50W投元</li>
-                        <li class="fl">当前投资：65W投元</li>
-                        <li class="fl">当前信誉：14W增元</li>
-                        <li class="fl"><button type="button">交易</button></li>
-                    </ul>
-                </template>
-                <div class="collapse_content_container card">
-                    <div class="collapse_content">
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
+                </el-collapse-item>
+                <el-collapse-item>
+                    <template slot="title">
+                        <ul class="fundList card clear">
+                            <li class="fl"><button type="button">正在运作</button></li>
+                            <li class="fl">中欧医院健康混合基金</li>
+                            <li class="fl">发布机构：GPI</li>
+                            <li class="fl">投资时间：2018-05-30</li>
+                            <li class="fl">投资金额：<span>50W投元</span></li>
+                            <li class="fl">当前投资：<span>65W投元</span></li>
+                            <li class="fl">当前信誉：<span>14W增元</span></li>
+                            <li class="fl"><button class="current" type="button">项目</button><button type="button">LP</button></li>
                         </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
+                    </template>
+                    <div class="fund_content_container card">
+                        <div class="fund_content project_content">
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                            <ul class="card clear">
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">项目名称：项目1</li>
+                                <li class="fl">xxxxxx企业名称1</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
+                        <div class="fund_content LP_content">
+                            <ul class="card clear">
+                                <li class="fl"><img src="../assets/img/chat_icon.png" alt=""></li>
+                                <li class="fl gray">2017.03.30</li>
+                                <li class="fl">LP名称：张三</li>
+                                <li class="fl">类别：个人</li>
+                                <li class="fl">投资金额：50W投元</li>
+                                <li class="fl">当前价值：65W投元</li>
+                                <li class="fl">当前信誉：14W增元</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </el-collapse-item>
-            <el-collapse-item>
-                <template slot="title">
-                    <ul class="collapse_title card clear">
-                        <li class="fl"><button type="button">正在运作</button></li>
-                        <li class="fl">中欧医院健康混合基金</li>
-                        <li class="fl">发布机构：GPI</li>
-                        <li class="fl">投资时间：2018-05-30</li>
-                        <li class="fl">投资金额：50W投元</li>
-                        <li class="fl">当前投资：65W投元</li>
-                        <li class="fl">当前信誉：14W增元</li>
-                        <li class="fl"><button type="button">交易</button></li>
-                    </ul>
-                </template>
-                <div class="collapse_content_container card">
-                    <div class="collapse_content">
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                        <ul class="card clear">
-                            <li class="fl">2017.03.30</li>
-                            <li class="fl">项目名称：项目1</li>
-                            <li class="fl">xxxxxx企业名称1</li>
-                            <li class="fl">投资金额：50W投元</li>
-                            <li class="fl">当前价值：65W投元</li>
-                            <li class="fl">当前信誉：14W增元</li>
-                        </ul>
-                    </div>
-                </div>
-            </el-collapse-item>
-        </el-collapse>
+                </el-collapse-item>
+            </el-collapse>
+        </VuePerfectScrollbar>
+        <VuePerfectScrollbar v-if="false" v-scroll class="equity">
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl">中欧医院健康混合项目</li>
+                <li class="fl">企业名称：蓝蚂蚁有限科技公司</li>
+                <li class="fl">投资时间：2018-05-30</li>
+                <li class="fl">投资金额：<span>50W投元</span></li>
+                <li class="fl">当前投资：<span>65W投元</span></li>
+                <li class="fl">当前信誉：<span>14W增元</span></li>
+                <li class="fl"><button type="button">交易</button></li>
+            </ul>
+        </VuePerfectScrollbar>
+        <VuePerfectScrollbar v-if="false" v-scroll class="project">
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+            <ul class="card clear">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+            <ul class="card clear stop">
+                <li class="fl"><button type="button">正在运作</button></li>
+                <li class="fl"><h1>生态渔业产业融资项目</h1><el-progress color="#e0c099" :percentage="70"></el-progress></li>
+                <li class="fl"><h2>300W投元</h2><h3>投资金额</h3></li>
+                <li class="fl"><h2>65W投元</h2><h3>当前价值</h3></li>
+                <li class="fl"><h2>14W投元</h2><h3>当前信誉</h3></li>
+                <li class="fl"><h2>2018-09-09</h2><h3>发布时间</h3></li>
+                <li class="fl"><button type="button">项目管理</button></li>
+            </ul>
+        </VuePerfectScrollbar>
         <div class="dialog_wrapper" v-show="dialogWrapperVisible" @click="dialogHide">
             <transition name="el-zoom-in-bottom">
                 <div class="dialog card clear" v-show="dialogVisible">
@@ -350,9 +466,11 @@
     import certification from '../assets/img/certification.png'
     import open_lock from '../assets/img/open_lock.png'
     import close_lock from '../assets/img/close_lock.png'
+    import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
     export default {
         name: "AssetsManage",
+        components: {VuePerfectScrollbar},
         data() {
             return{
                 imgUrl: {
@@ -547,109 +665,320 @@
 </script>
 
 <style lang='scss' scoped>
-    .breadcrumb{
-        height: 40px;
-        line-height: 40px;
-    }
-    .title{
-        height: 120px;
-        border-right: 30px solid #4e9ffa;
-        text-align: center;
-        padding: 20px 0;
-        margin-bottom: 20px;
-        li{
-            span{
-                font-size: 30px;
-                line-height: 120px;
-            }
-            img{
-                margin-top: 46px;
-                margin-left: 40px;
-            }
-            h1{
-                font-size: 24px;
-                color: #ff4b30;
-                height: 50px;
-                line-height: 50px;
-            }
-            h2{
-                font-size: 20px;
-                color: #666;
-                height: 40px;
-                line-height: 40px;
-            }
-            &:not(:first-child){
-                height: 90px;
-                width: 324px;
-                border-left: 1px solid #e6e6e6;
-                padding: 15px 0;
-            }
-            &:first-child{
-                width: 430px;
-            }
+    #assetsManage{
+        height: 100%;
+        .breadcrumb{
+            height: 40px;
+            line-height: 40px;
         }
-    }
-    .dialog_wrapper{
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 2000;
-        .dialog{
-            width: 1720px;
-            height: 410px;
-            position: absolute;
-            bottom: 10px;
-            right: 30px;
-            border: 1px solid #c5976c;
-            border-radius: 6px;
-            padding: 9px 19px;
-            .left{
-                width: 610px;
-                .chart{
-                    width: 602px;
-                    height: 192px;
-                    border: 4px solid #f9f9f9;
+        .title{
+            height: 120px;
+            border-right: 30px solid #4e9ffa;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            li{
+                span{
+                    font-size: 30px;
+                    line-height: 120px;
+                }
+                img{
+                    margin-top: 46px;
+                    margin-left: 40px;
+                }
+                h1{
+                    font-size: 24px;
+                    color: #ff4b30;
+                    height: 50px;
+                    line-height: 50px;
+                }
+                h2{
+                    font-size: 20px;
+                    color: #666;
+                    height: 40px;
+                    line-height: 40px;
+                }
+                &:not(:first-child){
+                    height: 90px;
+                    width: 324px;
+                    border-left: 1px solid #e6e6e6;
+                    padding: 15px 0;
+                }
+                &:first-child{
+                    width: 430px;
                 }
             }
-            .right{
-                width: 1090px;
-                .tableList{
-                    strong{
-                        display: inline-block;
-                        width: 32px;
-                        height: 32px;
-                        line-height: 32px;
-                        text-align: center;
-                        color: #fff;
-                        background-color: #fe7668;
-                        border-radius: 4px;
+        }
+        .fund{
+            height: calc(100% - 220px);
+            .fundList{
+                padding: 0 10px;
+                height: 86px;
+                line-height: 86px;
+                li{
+                    width: 255px;
+                    text-align: center;
+                    span{
+                        font-size: 16px;
+                        color: #ff4b30;
                     }
-                    h1{
-                        height: 44px;
-                        line-height: 44px;
-                        img{
-                            width: 44px;
-                            height: 44px;
-                            margin-right: 10px;
+                    &:first-child{
+                        width: 90px;
+                        button{
+                            width: 90px;
+                            height: 60px;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, #feb872, #fe6f67);
+                            color: #fff;
                         }
                     }
+                    &:last-child{
+                        width: 96px;
+                        button{
+                            width: 48px;
+                            height: 40px;
+                            background: #e3e2e2;
+                            color: #fff;
+                            &.current{
+                                background: #d3b085;
+                            }
+                            &:first-child{
+                                border-top-left-radius: 4px;
+                                border-bottom-left-radius: 4px;
+                            }
+                            &:last-child{
+                                border-top-right-radius: 4px;
+                                border-bottom-right-radius: 4px;
+                            }
+                        }
+                    }
+                }
+                &.stop{
+                    li{
+                        span{
+                            color: #3e76ff;
+                        }
+                        &:first-child{
+                            button{
+                                background: linear-gradient(to right, #08cefd, #4659fd);
+                            }
+                        }
+                    }
+                }
+            }
+            .fund_content_container{
+                padding: 20px 40px;
+                background-color: #fff;
+                .fund_content{
+                    border: 1px solid #c4966c;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    padding: 11px;
+                    ul{
+                        height: 40px;
+                        line-height: 40px;
+                        &:not(:last-child){
+                            margin-bottom: 8px;
+                        }
+                        li.gray{
+                            color: #ccc;
+                        }
+                    }
+                    &.project_content{
+                        li{
+                            width: 276px;
+                            text-align: center;
+                        }
+                    }
+                    &.LP_content{
+                        li{
+                            text-align: center;
+                            width: 267px;
+                            img{
+                                margin-top: 7px;
+                            }
+                            &:first-child{
+                                width: 54px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .equity{
+            height: calc(100% - 220px);
+            ul{
+                padding: 0 10px;
+                height: 86px;
+                line-height: 86px;
+                li{
+                    width: 259px;
+                    text-align: center;
+                    span{
+                        font-size: 16px;
+                        color: #ff4b30;
+                    }
+                    &:first-child{
+                        width: 90px;
+                        button{
+                            width: 90px;
+                            height: 60px;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, #feb872, #fe6f67);
+                            color: #fff;
+                        }
+                    }
+                    &:last-child{
+                        width: 96px;
+                        button{
+                            width: 96px;
+                            height: 40px;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, #ddc095, #c49469);
+                            color: #fff;
+                        }
+                    }
+                }
+                &.stop{
+                    li{
+                        span{
+                            color: #3e76ff;
+                        }
+                        &:first-child{
+                            button{
+                                background: linear-gradient(to right, #08cefd, #4659fd);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .project{
+            height: calc(100% - 220px);
+            ul{
+                padding: 13px 10px;
+                height: 60px;
+                line-height: 60px;
+                li{
+                    width: 276px;
                     h2{
                         height: 30px;
                         line-height: 30px;
-                        img{
-                            width: 24px;
-                            height: 24px;
-                            margin-top: 3px;
-                            margin-right: 10px;
-                        }
+                        font-size: 16px;
+                        color: #ff4b30;
+                        text-align: center;
                     }
                     h3{
                         height: 30px;
                         line-height: 30px;
-                        img{
-                            margin-top: 4px;
+                        text-align: center;
+                    }
+                    &:first-child{
+                        width: 90px;
+                        button{
+                            width: 90px;
+                            height: 60px;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, #feb872, #fe6f67);
+                            color: #fff;
+                        }
+                    }
+                    &:nth-child(2){
+                        width: 420px;
+                        padding-left: 30px;
+                        h1{
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 16px;
+                        }
+                    }
+                    &:last-child{
+                        width: 96px;
+                        button{
+                            width: 96px;
+                            height: 40px;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, #ddc095, #c49469);
+                            color: #fff;
+                        }
+                    }
+                }
+                &.stop{
+                    li{
+                        h2{
+                            color: #3e76ff;
+                        }
+                        &:first-child{
+                            button{
+                                background: linear-gradient(to right, #08cefd, #4659fd);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .dialog_wrapper{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2000;
+            .dialog{
+                width: 1720px;
+                height: 410px;
+                position: absolute;
+                bottom: 10px;
+                right: 30px;
+                border: 1px solid #c5976c;
+                border-radius: 6px;
+                padding: 9px 19px;
+                .left{
+                    width: 610px;
+                    .chart{
+                        width: 602px;
+                        height: 192px;
+                        border: 4px solid #f9f9f9;
+                    }
+                }
+                .right{
+                    width: 1090px;
+                    .tableList{
+                        strong{
+                            display: inline-block;
+                            width: 32px;
+                            height: 32px;
+                            line-height: 32px;
+                            text-align: center;
+                            color: #fff;
+                            background-color: #fe7668;
+                            border-radius: 4px;
+                        }
+                        h1{
+                            height: 44px;
+                            line-height: 44px;
+                            img{
+                                width: 44px;
+                                height: 44px;
+                                margin-right: 10px;
+                            }
+                        }
+                        h2{
+                            height: 30px;
+                            line-height: 30px;
+                            img{
+                                width: 24px;
+                                height: 24px;
+                                margin-top: 3px;
+                                margin-right: 10px;
+                            }
+                        }
+                        h3{
+                            height: 30px;
+                            line-height: 30px;
+                            img{
+                                margin-top: 4px;
+                            }
                         }
                     }
                 }
@@ -663,38 +992,14 @@
         .el-collapse{
             border: none;
             .el-collapse-item{
-                margin-bottom: 16px;
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
                 .el-collapse-item__header{
                     height: 86px;
                     line-height: 86px;
                     background-color: transparent;
                     border-bottom: none;
-                    .collapse_title{
-                        li{
-                            width: 256px;
-                            text-align: center;
-                        }
-                        li:first-child{
-                            width: 90px;
-                            button{
-                                width: 90px;
-                                height: 60px;
-                                border-radius: 4px;
-                                background: linear-gradient(to right, #feb872, #fe6f67);
-                                color: #fff;
-                            }
-                        }
-                        li:last-child{
-                            width: 96px;
-                            button{
-                                width: 96px;
-                                height: 40px;
-                                border-radius: 4px;
-                                background: linear-gradient(to right, #ddc095, #c49469);
-                                color: #fff;
-                            }
-                        }
-                    }
                 }
                 .el-collapse-item__arrow{
                     margin-top: 19px;
@@ -702,33 +1007,11 @@
                 .el-collapse-item__wrap{
                     background-color: transparent;
                     border-bottom: none;
+                    width: 100%;
                 }
                 .el-collapse-item__content{
                     padding-bottom: 0;
                     padding-top: 16px;
-                    .collapse_content_container{
-                        padding: 20px 45px;
-                        .collapse_content{
-                            border: 1px solid #c5976c;
-                            padding: 0 12px;
-                            border-radius: 6px;
-                            ul{
-                                height: 44px;
-                                line-height: 44px;
-                                margin: 10px 0;
-                                li{
-                                    width: 254px;
-                                    padding-left: 20px;
-                                    &:first-child{
-                                        width: 180px;
-                                    }
-                                    &:nth-child(2){
-                                        width: 328px;
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
