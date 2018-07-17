@@ -344,7 +344,7 @@
 </template>
 
 <script>
-    import evet_img from '../assets/img/evet_img.png'
+    import event_img from '../assets/img/event_img.png'
     import firm from '../assets/img/firm.png'
     import AMAC from '../assets/img/AMAC.png'
     import certification from '../assets/img/certification.png'
@@ -366,7 +366,7 @@
                         id: '1',
                         event: {
                             value: 'xxxxxxx基金发布',
-                            img: evet_img
+                            img: event_img
                         },
                         date: '2016-05-02',
                         organization: [
@@ -402,7 +402,7 @@
                         id: '1',
                         event: {
                             value: 'xxxxxxx基金发布',
-                            img: evet_img
+                            img: event_img
                         },
                         date: '2016-05-02',
                         organization: [
@@ -438,7 +438,7 @@
                         id: '1',
                         event: {
                             value: 'xxxxxxx基金发布',
-                            img: evet_img
+                            img: event_img
                         },
                         date: '2016-05-02',
                         organization: [
